@@ -5,16 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Button mButton;
+    ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mButton = (Button) findViewById(R.id.tellJoke);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mButton.setClickable(true);
+        mProgressBar.setVisibility(View.GONE);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view){
+        mButton.setClickable(false);
+        mProgressBar.setVisibility(View.VISIBLE);
         new EndpointsAsyncTask().execute(this);
     }
 
