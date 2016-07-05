@@ -21,10 +21,6 @@ import org.junit.runner.RunWith;
 @LargeTest
 public class ApplicationTest {
 
-    @Rule
-    public ActivityTestRule<MainActivity> mActivityTestRule = new
-            ActivityTestRule<>(MainActivity.class);
-
     @Test
     public void showJoke() {
         onView(withId(R.id.tellJoke)).perform(click());
