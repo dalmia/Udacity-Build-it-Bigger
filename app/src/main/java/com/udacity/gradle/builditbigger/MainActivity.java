@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DisplayJoke {
 
     Button mButton;
     ProgressBar mProgressBar;
@@ -51,11 +51,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view){
+    @Override
+    public void showJokeActivity() {
+        showJokeActivity(null);
+    }
+
+    public void showJokeActivity(View view) {
         mButton.setClickable(false);
         mProgressBar.setVisibility(View.VISIBLE);
         new EndpointsAsyncTask().execute(this);
     }
-
 
 }
