@@ -22,9 +22,11 @@ import com.google.api.server.spi.config.ApiNamespace;
 )
 public class MyEndpoint {
 
-    /** A simple endpoint method that takes a name and says Hi back */
-    @ApiMethod(name = "sayHi")
-    public MyJoke sayHi() {
+    /** A simple endpoint method that returns the joke from our
+     *  Java Library to the Google Cloud Endpoint */
+
+    @ApiMethod(name = "sendJoke")
+    public MyJoke sendJoke() {
         MyJoke response = new MyJoke();
         return response;
     }

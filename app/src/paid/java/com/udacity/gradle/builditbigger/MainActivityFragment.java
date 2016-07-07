@@ -11,7 +11,7 @@ import com.google.android.gms.ads.AdView;
 
 
 /**
- * A placeholder fragment containing a simple view.
+ * Free version of the MainActivity Fragment not containing ads.
  */
 public class MainActivityFragment extends Fragment {
 

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements DisplayJoke {
     @Override
     protected void onStop() {
         super.onStop();
+        // resume the button and progressBar states when the activity closes
         mButton.setClickable(true);
         mProgressBar.setVisibility(View.GONE);
     }
@@ -51,14 +52,24 @@ public class MainActivity extends AppCompatActivity implements DisplayJoke {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Invoked by the DisplayJoke instance in the MainActivityFragment
+     * in the free flavour
+     */
     @Override
     public void showJokeActivity() {
         showJokeActivity(null);
     }
 
+    /** Handling the button click for the MainActivityFragment
+     * @param view - button that is clicked
+     */
     public void showJokeActivity(View view) {
+
+        // Showing the progressBar while the joke is being fetched
         mButton.setClickable(false);
         mProgressBar.setVisibility(View.VISIBLE);
+        // Starting the AsyncTask
         new EndpointsAsyncTask().execute(this);
     }
 

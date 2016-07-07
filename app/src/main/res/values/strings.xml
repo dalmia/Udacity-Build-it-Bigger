@@ -1,7 +1,16 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">Build it Bigger</string>
+
+    <!-- Text for the textView in our MainActivity showing the instructions -->
     <string name="instructions">Press the button for a delicious joke!</string>
+
+    <!-- Default text for the button in our MainActivity -->
     <string name="button_text">Tell Joke</string>
+
+    <!-- Title for the Settings Option in our menu -->
     <string name="action_settings">Settings</string>
+
+    <!-- AdUnitID for the banner ad -->
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

@@ -14,7 +14,7 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import java.io.IOException;
 
 /**
- * Created by aman on 3/7/16.
+ * Async Task to connect to the Google Cloud Backend and fetch the Joke from our Java library
  */
 public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
@@ -41,10 +41,11 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
             myApiService = builder.build();
         }
 
+        // receiving the context passed to the task
         context = params[0];
 
         try {
-            return myApiService.sayHi().execute().getData();
+            return myApiService.sendJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -52,8 +53,10 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
+
+        // Opening the DisplayJokeActivity once the background task is finished
         Intent intent = new Intent(context, DisplayJokeActivity.class);
-        intent.putExtra("joke", result);
+        intent.putExtra(DisplayJokeActivity.JOKE_INTENT_KEY, result);
         context.startActivity(intent);
     }
 }

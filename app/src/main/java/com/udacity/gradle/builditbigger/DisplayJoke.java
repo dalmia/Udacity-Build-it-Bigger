@@ -1,8 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
 /**
- * Created by aman on 6/7/16.
+ * Interface to receive the button click from the
+ * MainActivityFragment in the free flavour
  */
 public interface DisplayJoke {
+    // handles the button click for the free flavour
     void showJokeActivity();
 }
