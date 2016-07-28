@@ -26,7 +26,7 @@ GCE module and passes them to the Android Library for display.
 
 * Run the project using the `/gradlew` command from the terminal in Android Studio or click on the `Import a new Project` option from the File menu.
 
-* You can **Fork** the project, issue any bugs that you may find and create a **Pull Request** for the changes to be merged.
+* You can [Fork](https://help.github.com/articles/fork-a-repo/) the project, issue any bugs that you may find and create a [Pull Request](https://help.github.com/articles/creating-a-pull-request/) for the changes to be merged.
 
 ## Libraries
 
